@@ -1,0 +1,1079 @@
+{
+	"info": {
+		"_postman_id": "9ff3dc54-766d-4a10-ade5-6154fc9e4146",
+		"name": "Запрос информации о пользователе",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24292468"
+	},
+	"item": [
+		{
+			"name": "api/test/user/correct(5)min_id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Проверка значений в ответе\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.isSuccess).to.eql(true);\r",
+							"    pm.expect(jsonData.errorCode).to.eql(0);\r",
+							"    pm.expect(jsonData.errorMessage).to.eql(null);\r",
+							"    pm.expect(jsonData.user[\"id\"]).to.eql(5);\r",
+							"    pm.expect(jsonData.user[\"name\"]).to.eql(\"Ann\");\r",
+							"    pm.expect(jsonData.user[\"gender\"]).to.eql(\"female\");\r",
+							"    pm.expect(jsonData.user[\"age\"]).to.eql(22);\r",
+							"    pm.expect(jsonData.user[\"city\"]).to.eql(\"Novosibirsk\");\r",
+							"    pm.expect(jsonData.user[\"registrationDate\"]).to.eql(\"2017-04-12T18:30:01.000000021\");\r",
+							"\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "10",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://hr-challenge.interactivestandard.com/api/test/user/:id",
+					"protocol": "https",
+					"host": [
+						"hr-challenge",
+						"interactivestandard",
+						"com"
+					],
+					"path": [
+						"api",
+						"test",
+						"user",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/test/user/correct(16)female",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Проверка значений в ответе\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.isSuccess).to.eql(true);\r",
+							"    pm.expect(jsonData.errorCode).to.eql(0);\r",
+							"    pm.expect(jsonData.errorMessage).to.eql(null);\r",
+							"    pm.expect(jsonData.user[\"id\"]).to.eql(16);\r",
+							"    pm.expect(jsonData.user[\"name\"]).to.eql(\"Karina\");\r",
+							"    pm.expect(jsonData.user[\"gender\"]).to.eql(\"female\");\r",
+							"    pm.expect(jsonData.user[\"age\"]).to.eql(16);\r",
+							"    pm.expect(jsonData.user[\"city\"]).to.eql(\"New York\");\r",
+							"    pm.expect(jsonData.user[\"registrationDate\"]).to.eql(\"2001-06-15T12:43:12.000000054\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "10",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://hr-challenge.interactivestandard.com/api/test/user/:id",
+					"protocol": "https",
+					"host": [
+						"hr-challenge",
+						"interactivestandard",
+						"com"
+					],
+					"path": [
+						"api",
+						"test",
+						"user",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "16"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/test/user/correct(911)max_id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Проверка значений в ответе\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.isSuccess).to.eql(true);\r",
+							"    pm.expect(jsonData.errorCode).to.eql(0);\r",
+							"    pm.expect(jsonData.errorMessage).to.eql(null);\r",
+							"    pm.expect(jsonData.user[\"id\"]).to.eql(911);\r",
+							"    pm.expect(jsonData.user[\"name\"]).to.eql(\"Koschey\");\r",
+							"    pm.expect(jsonData.user[\"gender\"]).to.eql(\"male\");\r",
+							"    pm.expect(jsonData.user[\"age\"]).to.eql(911);\r",
+							"    pm.expect(jsonData.user[\"city\"]).to.eql(\"Pustosh\");\r",
+							"    pm.expect(jsonData.user[\"registrationDate\"]).to.eql(\"2017-04-12T18:30:01.000000021\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "10",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://hr-challenge.interactivestandard.com/api/test/user/:id",
+					"protocol": "https",
+					"host": [
+						"hr-challenge",
+						"interactivestandard",
+						"com"
+					],
+					"path": [
+						"api",
+						"test",
+						"user",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "911"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/test/user/correct(94)middle_id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Проверка значений в ответе\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.isSuccess).to.eql(true);\r",
+							"    pm.expect(jsonData.errorCode).to.eql(0);\r",
+							"    pm.expect(jsonData.errorMessage).to.eql(null);\r",
+							"        pm.expect(jsonData.user[\"id\"]).to.eql(94);\r",
+							"    pm.expect(jsonData.user[\"name\"]).to.eql(\"Ann\");\r",
+							"    pm.expect(jsonData.user[\"gender\"]).to.eql(\"female\");\r",
+							"    pm.expect(jsonData.user[\"age\"]).to.eql(22);\r",
+							"    pm.expect(jsonData.user[\"city\"]).to.eql(\"Novosibirsk\");\r",
+							"    pm.expect(jsonData.user[\"registrationDate\"]).to.eql(\"2017-04-12T18:30:01.000000021\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "10",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://hr-challenge.interactivestandard.com/api/test/user/:id",
+					"protocol": "https",
+					"host": [
+						"hr-challenge",
+						"interactivestandard",
+						"com"
+					],
+					"path": [
+						"api",
+						"test",
+						"user",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "94"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/test/user/correct(502)middle_id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Проверка значений в ответе\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.isSuccess).to.eql(true);\r",
+							"    pm.expect(jsonData.errorCode).to.eql(0);\r",
+							"    pm.expect(jsonData.errorMessage).to.eql(null);\r",
+							"            pm.expect(jsonData.user[\"id\"]).to.eql(502);\r",
+							"    pm.expect(jsonData.user[\"name\"]).to.eql(\"Ann\");\r",
+							"    pm.expect(jsonData.user[\"gender\"]).to.eql(\"female\");\r",
+							"    pm.expect(jsonData.user[\"age\"]).to.eql(22);\r",
+							"    pm.expect(jsonData.user[\"city\"]).to.eql(\"Novosibirsk\");\r",
+							"    pm.expect(jsonData.user[\"registrationDate\"]).to.eql(\"2017-04-12T18:30:01.000000021\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "10",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://hr-challenge.interactivestandard.com/api/test/user/:id",
+					"protocol": "https",
+					"host": [
+						"hr-challenge",
+						"interactivestandard",
+						"com"
+					],
+					"path": [
+						"api",
+						"test",
+						"user",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "502"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/test/user/correct(666)nobd_id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"Not Found\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Проверка значений в ответе\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.isSuccess).to.eql(false);\r",
+							"    pm.expect(jsonData.errorCode).to.eql(404);\r",
+							"    pm.expect(jsonData.errorMessage).to.eql('Указанный пользователь не найден');\r",
+							"    pm.expect(jsonData.user).to.eql(null);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "10",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://hr-challenge.interactivestandard.com/api/test/user/:id",
+					"protocol": "https",
+					"host": [
+						"hr-challenge",
+						"interactivestandard",
+						"com"
+					],
+					"path": [
+						"api",
+						"test",
+						"user",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "666"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/test/user/id(0)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"Bad Request\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Проверка значений в ответе\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.isSuccess).to.eql(false);\r",
+							"    pm.expect(jsonData.errorCode).to.eql(404);\r",
+							"    pm.expect(jsonData.errorMessage).to.eql('Указанный пользователь не найден');\r",
+							"    pm.expect(jsonData.user).to.eql(null);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "10",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://hr-challenge.interactivestandard.com/api/test/user/:id",
+					"protocol": "https",
+					"host": [
+						"hr-challenge",
+						"interactivestandard",
+						"com"
+					],
+					"path": [
+						"api",
+						"test",
+						"user",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/test/user/without_id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"Bad Request\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Проверка значений в ответе\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.isSuccess).to.eql(false);\r",
+							"    pm.expect(jsonData.errorCode).to.eql(400);\r",
+							"    pm.expect(jsonData.errorMessage).to.eql(\"NumberFormatException: For input string: \\\":id\\\"\");\r",
+							"     pm.expect(jsonData.user).to.eql(null);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "10",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://hr-challenge.interactivestandard.com/api/test/user/:id",
+					"protocol": "https",
+					"host": [
+						"hr-challenge",
+						"interactivestandard",
+						"com"
+					],
+					"path": [
+						"api",
+						"test",
+						"user",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/test/user/empty_id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"Bad Request\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Проверка значений в ответе\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.isSuccess).to.eql(false);\r",
+							"    pm.expect(jsonData.errorCode).to.eql(404);\r",
+							"    pm.expect(jsonData.errorMessage).to.eql(\"Указанный пользователь не найден\");\r",
+							"     pm.expect(jsonData.user).to.eql(null);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "10",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://hr-challenge.interactivestandard.com/api/test/user/:id",
+					"protocol": "https",
+					"host": [
+						"hr-challenge",
+						"interactivestandard",
+						"com"
+					],
+					"path": [
+						"api",
+						"test",
+						"user",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": " "
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/test/user/id_null",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"Bad Request\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Проверка значений в ответе\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.isSuccess).to.eql(false);\r",
+							"    pm.expect(jsonData.errorCode).to.eql(400);\r",
+							"    pm.expect(jsonData.errorMessage).to.eql(\"NumberFormatException: For input string: \\\" null\\\"\");\r",
+							"    pm.expect(jsonData.user).to.eql(null);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "10",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://hr-challenge.interactivestandard.com/api/test/user/:id",
+					"protocol": "https",
+					"host": [
+						"hr-challenge",
+						"interactivestandard",
+						"com"
+					],
+					"path": [
+						"api",
+						"test",
+						"user",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": " null"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/test/user/id_string",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"Bad Request\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Проверка значений в ответе\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.isSuccess).to.eql(false);\r",
+							"    pm.expect(jsonData.errorCode).to.eql(400);\r",
+							"    pm.expect(jsonData.errorMessage).to.eql(\"NumberFormatException: For input string: \\\" qwerty\\\"\");\r",
+							"    pm.expect(jsonData.user).to.eql(null);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "10",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://hr-challenge.interactivestandard.com/api/test/user/:id",
+					"protocol": "https",
+					"host": [
+						"hr-challenge",
+						"interactivestandard",
+						"com"
+					],
+					"path": [
+						"api",
+						"test",
+						"user",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": " qwerty"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/test/user/symbols",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"Bad Request\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Проверка значений в ответе\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.isSuccess).to.eql(false);\r",
+							"    pm.expect(jsonData.errorCode).to.eql(400);\r",
+							"    pm.expect(jsonData.errorMessage).to.eql(\"NumberFormatException: For input string: \\\"''\\\"\\\"!@$@\\\"\");\r",
+							"    pm.expect(jsonData.user).to.eql(null);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "10",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://hr-challenge.interactivestandard.com/api/test/user/:id",
+					"protocol": "https",
+					"host": [
+						"hr-challenge",
+						"interactivestandard",
+						"com"
+					],
+					"path": [
+						"api",
+						"test",
+						"user",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "''\"\"!@$@#%$#&&@!$@#^$_%*^g3t$%@#^#@$&$#"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/test/user/script",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"Bad Request\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Проверка значений в ответе\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.isSuccess).to.eql(false);\r",
+							"    pm.expect(jsonData.errorCode).to.eql(400);\r",
+							"    pm.expect(jsonData.errorMessage).to.eql(\"NumberFormatException: For input string: <script>alert(\\\"I hacked this!\\\")</script>\");\r",
+							"    pm.expect(jsonData.user).to.eql(null);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "10",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://hr-challenge.interactivestandard.com/api/test/user/:id",
+					"protocol": "https",
+					"host": [
+						"hr-challenge",
+						"interactivestandard",
+						"com"
+					],
+					"path": [
+						"api",
+						"test",
+						"user",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "<script>alert(\"I hacked this!\")</script>"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/test/user/sql_injection",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"Bad Request\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Проверка значений в ответе\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.isSuccess).to.eql(false);\r",
+							"    pm.expect(jsonData.errorCode).to.eql(400);\r",
+							"    pm.expect(jsonData.errorMessage).to.eql(\"NumberFormatException: For input string: \\\"DROP TABLE USERS\\\"\");\r",
+							"    pm.expect(jsonData.user).to.eql(null);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "10",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://hr-challenge.interactivestandard.com/api/test/user/:id",
+					"protocol": "https",
+					"host": [
+						"hr-challenge",
+						"interactivestandard",
+						"com"
+					],
+					"path": [
+						"api",
+						"test",
+						"user",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "DROP TABLE USERS"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/test/user/minus",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"Bad Request\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Проверка значений в ответе\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.isSuccess).to.eql(false);\r",
+							"    pm.expect(jsonData.errorCode).to.eql(400);\r",
+							"    pm.expect(jsonData.errorMessage).to.eql(\"NumberFormatException: For input string: \\\"1.2\\\"\");\r",
+							"    pm.expect(jsonData.user).to.eql(null);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "10",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://hr-challenge.interactivestandard.com/api/test/user/:id",
+					"protocol": "https",
+					"host": [
+						"hr-challenge",
+						"interactivestandard",
+						"com"
+					],
+					"path": [
+						"api",
+						"test",
+						"user",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1.2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/test/user/not_int",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"Bad Request\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Проверка значений в ответе\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.isSuccess).to.eql(false);\r",
+							"    pm.expect(jsonData.errorCode).to.eql(400);\r",
+							"    pm.expect(jsonData.errorMessage).to.eql(\"NumberFormatException: For input string: \\\"5,2\\\"\");\r",
+							"    pm.expect(jsonData.user).to.eql(null);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "10",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://hr-challenge.interactivestandard.com/api/test/user/:id",
+					"protocol": "https",
+					"host": [
+						"hr-challenge",
+						"interactivestandard",
+						"com"
+					],
+					"path": [
+						"api",
+						"test",
+						"user",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "5,2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/test/user/first_space",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"Bad Request\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Проверка значений в ответе\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.isSuccess).to.eql(false);\r",
+							"    pm.expect(jsonData.errorCode).to.eql(400);\r",
+							"    pm.expect(jsonData.errorMessage).to.eql(\"NumberFormatException: For input string: \\\" 911\\\"\");\r",
+							"    pm.expect(jsonData.user).to.eql(null);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "10",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://hr-challenge.interactivestandard.com/api/test/user/:id",
+					"protocol": "https",
+					"host": [
+						"hr-challenge",
+						"interactivestandard",
+						"com"
+					],
+					"path": [
+						"api",
+						"test",
+						"user",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": " 911"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
