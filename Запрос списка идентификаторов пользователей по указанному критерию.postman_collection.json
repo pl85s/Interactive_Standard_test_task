@@ -53,6 +53,11 @@
 						{
 							"key": "gender",
 							"value": "male"
+						},
+						{
+							"key": "age",
+							"value": "22",
+							"disabled": true
 						}
 					]
 				}
@@ -733,6 +738,58 @@
 						{
 							"key": "gender",
 							"value": " male"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/test/users/delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {\r",
+							"    pm.response.to.have.status(405);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"Method Not Allowed\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://hr-challenge.interactivestandard.com/api/test/users?gender=male",
+					"protocol": "https",
+					"host": [
+						"hr-challenge",
+						"interactivestandard",
+						"com"
+					],
+					"path": [
+						"api",
+						"test",
+						"users"
+					],
+					"query": [
+						{
+							"key": "gender",
+							"value": "male"
+						},
+						{
+							"key": "age",
+							"value": "22",
+							"disabled": true
 						}
 					]
 				}

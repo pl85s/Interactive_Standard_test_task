@@ -169,7 +169,7 @@
 							"    pm.expect(jsonData.user[\"gender\"]).to.eql(\"male\");\r",
 							"    pm.expect(jsonData.user[\"age\"]).to.eql(911);\r",
 							"    pm.expect(jsonData.user[\"city\"]).to.eql(\"Pustosh\");\r",
-							"    pm.expect(jsonData.user[\"registrationDate\"]).to.eql(\"2017-04-12T18:30:01.000000021\");\r",
+							"    pm.expect(jsonData.user[\"registrationDate\"]).to.eql(\"2017-04-12T18:30:01.000000000\");\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -231,11 +231,11 @@
 							"    pm.expect(jsonData.errorCode).to.eql(0);\r",
 							"    pm.expect(jsonData.errorMessage).to.eql(null);\r",
 							"        pm.expect(jsonData.user[\"id\"]).to.eql(94);\r",
-							"    pm.expect(jsonData.user[\"name\"]).to.eql(\"Ann\");\r",
-							"    pm.expect(jsonData.user[\"gender\"]).to.eql(\"female\");\r",
-							"    pm.expect(jsonData.user[\"age\"]).to.eql(22);\r",
-							"    pm.expect(jsonData.user[\"city\"]).to.eql(\"Novosibirsk\");\r",
-							"    pm.expect(jsonData.user[\"registrationDate\"]).to.eql(\"2017-04-12T18:30:01.000000021\");\r",
+							"    pm.expect(jsonData.user[\"name\"]).to.eql(\"Pooh\");\r",
+							"    pm.expect(jsonData.user[\"gender\"]).to.eql(\"male\");\r",
+							"    pm.expect(jsonData.user[\"age\"]).to.eql(94);\r",
+							"    pm.expect(jsonData.user[\"city\"]).to.eql(\"Winnipeg\");\r",
+							"    pm.expect(jsonData.user[\"registrationDate\"]).to.eql(\"2021-03-18T04:12:00.000000000\");\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -788,8 +788,8 @@
 							"pm.test(\"Проверка значений в ответе\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.isSuccess).to.eql(false);\r",
-							"    pm.expect(jsonData.errorCode).to.eql(400);\r",
-							"    pm.expect(jsonData.errorMessage).to.eql(\"NumberFormatException: For input string: <script>alert(\\\"I hacked this!\\\")</script>\");\r",
+							"    pm.expect(jsonData.errorCode).to.eql(404);\r",
+							"    pm.expect(jsonData.errorMessage).to.eql(\"Пользователь не найден\");\r",
 							"    pm.expect(jsonData.user).to.eql(null);\r",
 							"});"
 						],
@@ -904,14 +904,14 @@
 							"});\r",
 							"\r",
 							"pm.test(\"Status code name has string\", function () {\r",
-							"    pm.response.to.have.status(\"Bad Request\");\r",
+							"    pm.response.to.have.status(\"Not Found\");\r",
 							"});\r",
 							"\r",
 							"pm.test(\"Проверка значений в ответе\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.isSuccess).to.eql(false);\r",
-							"    pm.expect(jsonData.errorCode).to.eql(400);\r",
-							"    pm.expect(jsonData.errorMessage).to.eql(\"NumberFormatException: For input string: \\\"1.2\\\"\");\r",
+							"    pm.expect(jsonData.errorCode).to.eql(404);\r",
+							"    pm.expect(jsonData.errorMessage).to.eql(\"Пользователь не найден\");\r",
 							"    pm.expect(jsonData.user).to.eql(null);\r",
 							"});"
 						],
@@ -946,7 +946,7 @@
 					"variable": [
 						{
 							"key": "id",
-							"value": "1.2"
+							"value": "-1"
 						}
 					]
 				}
@@ -1069,6 +1069,63 @@
 						{
 							"key": "id",
 							"value": " 911"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/test/user/delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {\r",
+							"    pm.response.to.have.status(405);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"Method Not Allowed\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "id",
+						"value": "10",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://hr-challenge.interactivestandard.com/api/test/user/:id",
+					"protocol": "https",
+					"host": [
+						"hr-challenge",
+						"interactivestandard",
+						"com"
+					],
+					"path": [
+						"api",
+						"test",
+						"user",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "5"
 						}
 					]
 				}
